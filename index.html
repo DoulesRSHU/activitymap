@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта студенческих объединений РГГМУ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="header-content">
+            <div class="logo-backdrop"></div>
+            <img src="images/logo.png" alt="Логотип РГГМУ" class="logo">
+
+        </div>
+    </header>
+
+    <div id="categories-screen" class="screen active">
+        <div class="mode-switcher-container">
+            <div class="mode-switcher">
+                <span class="mode-label">Подбор</span>
+                <label class="switch">
+                    <input type="checkbox" id="mode-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <span class="mode-label">Просмотр</span>
+            </div>
+        </div>
+
+        <h2>Выберите интересующие вас категории</h2>
+        <div class="categories-grid">
+            <label class="category-card">
+                <input type="checkbox" name="category" value="science">
+                <div class="category-content">
+                    <img src="images/science.jpg" alt="Наука">
+                    <h3>Научные</h3>
+                    <p>Студенческие научные общества, интеллектуальные клубы</p>
+                </div>
+            </label>
+
+            <label class="category-card">
+                <input type="checkbox" name="category" value="social">
+                <div class="category-content">
+                    <img src="images/volunteer.jpg" alt="Социальные">
+                    <h3>Социальные</h3>
+                    <p>Волонтерские центры, патриотические объединения</p>
+                </div>
+            </label>
+
+            <label class="category-card">
+                <input type="checkbox" name="category" value="creative">
+                <div class="category-content">
+                    <img src="images/bravo.jpg" alt="Творчество">
+                    <h3>Культурно-творческие</h3>
+                    <p>Театры, хоры, танцевальные коллективы, медиа-студии</p>
+                </div>
+            </label>
+
+            <label class="category-card">
+                <input type="checkbox" name="category" value="sport">
+                <div class="category-content">
+                    <img src="images/sport.jpg" alt="Спорт">
+                    <h3>Спортивные</h3>
+                    <p>Спортивные секции, клубы, соревнования</p>
+                </div>
+            </label>
+
+            <label class="category-card">
+                <input type="checkbox" name="category" value="squads">
+                <div class="category-content">
+                    <img src="images/squads.jpg" alt="Отряды">
+                    <h3>Студенческие отряды</h3>
+                    <p>Педагогические, строительные, сельскохозяйственные отряды</p>
+                </div>
+            </label>
+        </div>
+
+        <div id="error-message" class="error-message hidden">
+            Для продолжения выберите хотя бы одну категорию
+        </div>
+
+        <button id="next-btn" class="btn">Далее</button>
+    </div>
+
+    <div id="swipe-screen" class="screen">
+        <div class="swipe-container">
+            <div id="card-deck" class="card-deck"></div>
+        </div>
+        <div class="swipe-actions">
+            <button id="dislike-btn" class="swipe-btn dislike">✖</button>
+            <button id="like-btn" class="swipe-btn like">❤</button>
+        </div>
+    </div>
+
+    <div id="browse-screen" class="screen">
+        <h2>Объединения по выбранным категориям</h2>
+        <div id="browse-grid" class="browse-grid"></div>
+        <button id="back-to-categories-btn" class="btn secondary">Назад к выбору</button>
+    </div>
+
+    <div id="results-screen" class="screen">
+        <h2 id="results-title">Мои объединения</h2>
+        <div id="matches-grid" class="matches-grid"></div>
+
+        <div id="no-matches-container" class="no-matches-container">
+            <div class="no-matches-card">
+                <img src="images/council.jpg" alt="Совет обучающихся" class="no-matches-image">
+                <div class="no-matches-content">
+                    <h3>Не нашел подходящего объединения?</h3>
+                    <p>Расскажи нам, какое направление тебя интересует. Мы рассмотрим твое предложение и постараемся помочь!</p>
+                    <div class="suggestion-buttons">
+                        <a href="https://forms.yandex.ru/u/68089fbc50569042e592b29a/"
+                           target="_blank"
+                           class="suggestion-btn">
+                            Оставить предложение
+                        </a>
+                        <div class="social-icons">
+                            <a href="https://vk.com/studsovet_rshu" target="_blank">
+                                <img src="images/vk-logo.png" alt="ВКонтакте" class="social-icon">
+                            </a>
+                            <a href="https://t.me/so_life_rggmu" target="_blank">
+                                <img src="images/tg-logo.png" alt="Telegram" class="social-icon">
+                            </a>
+                        </div>
+                    </div>
+                    <button id="show-recommendations-btn" class="pulse-btn">🎲</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="recommendations-container" class="hidden">
+            <h3 class="recommendations-title">Тебе могут понравиться эти объединения:</h3>
+            <div id="recommendations-grid" class="recommendations-grid"></div>
+        </div>
+
+        <div id="buttons-container">
+            <button id="export-btn" class="btn">Экспорт в PDF</button>
+            <button id="restart-btn" class="btn secondary">Начать заново</button>
+        </div>
+    </div>
+</div>
+
+<script src="libs/html2pdf.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="script.js"></script>
+</body>
+</html>
