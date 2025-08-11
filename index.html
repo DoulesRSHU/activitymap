@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Карта студенческих объединений РГГМУ</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
     <header>
-        <div class="header-content">
-            <div class="logo-backdrop"></div>
-            <img src="images/logo.png" alt="Логотип РГГМУ" class="logo">
+        <!-- контейнер фоновых логотипов в хэдере -->
+        <div class="header-background"></div>
+        <div class="header-background-logos" aria-hidden="true"></div>
 
+        <div class="header-content">
+            <div class="logo-backdrop" aria-hidden="true"></div>
+            <img src="images/logo.png" alt="Логотип" class="logo">
         </div>
     </header>
 
@@ -144,5 +147,35 @@
 <script src="libs/html2pdf.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="script.js"></script>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <!-- контейнер фоновых логотипов, ограниченный шириной контента -->
+        <div class="footer-background-logos" aria-hidden="true"></div>
+        <div class="footer-background"></div>
+
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://forms.yandex.ru/u/68089fbc50569042e592b29a/" target="_blank" class="footer-link underline-on-hover">Связаться с нами</a>
+
+                <div class="footer-social">
+                    <a href="https://vk.com/studsovet_rshu" target="_blank">
+                        <img src="images/vk-logo.png" alt="ВКонтакте">
+                    </a>
+                    <a href="https://t.me/so_life_rggmu" target="_blank">
+                        <img src="images/tg-logo.png" alt="Telegram">
+                    </a>
+                </div>
+
+                <a href="https://vk.com/d.leskova2002" target="_blank" class="footer-link underline-on-hover">Сообщить о проблемах</a>
+            </div>
+
+            <a href="https://rshu.ru/" target="_blank" class="footer-university underline-on-hover">
+                <span>Российский государственный<br>гидрометеорологический университет</span>
+                <img src="images/logorshu.png" alt="РГГМУ" class="footer-university-logo">
+            </a>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
