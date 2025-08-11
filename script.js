@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
                 name: "Социальное добровольческое объединение «ЗОВ»",
-                description: "Помогаем нуждающимся, организуем благотворительные акции и мероприятия.",
+                description: "Помогаем нуждающимся, организуем благотворительные акции, выезды и мероприятия.",
                 link: "https://vk.com/dobrozov",
                 image: "images/zov.jpg"
             },
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
                 name: "Донорская ячейка «ЗОВ КРОВИ»",
-                description: "Организуем День Донора в РГГМУ",
+                description: "Организуем День Донора в РГГМУ, а также лекции по донорству.",
                 link: "https://vk.com/zovkrovi_rshu",
                 image: "images/blood.jpg"
             },
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
                 name: "Ячейка ассоциации «Покров» в РГГМУ",
-                description: "Принимаем участие в общепокровских мероприятиях, помогаем в их организации.",
+                description: "Принимаем участие в гражданско-патриотических мероприятиях, помогаем в их организации.",
                 link: "https://vk.com/rshupokrov",
                 image: "images/pokrov.jpg"
             },
@@ -100,13 +100,13 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
                 name: "Коллектив народного вокала «Птичка певчая»",
-                description: "Исполняем народные песни и участвуем в конкурсах и фестивалях.",
+                description: "Исполняем народные песни, участвуем в конкурсах и фестивалях.",
                 link: "https://vk.com/im/convo/515820771?entrypoint=list_all&z=video-250783_456239156%2F9fae44af5d8dc06ca5",
                 image: "images/vocal.jpg"
             },
             {
                 name: "Коллектив современной хореографии «Preparation»",
-                description: "Оттачиваем мастерство в современных направлениях и представляем университет на конкурсах",
+                description: "Оттачиваем мастерство в современных направлениях и представляем университет на конкурсах.",
                 link: "https://vk.com/preparationrshu",
                 image: "images/dance.jpg"
             },
@@ -122,12 +122,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 link: "https://vk.com/club149122480?from=search",
                 image: "images/ethnic.jpg"
             },
-            {
-                name: "Студенческая медиа-студия",
-                description: "Создаем фото- и видеоконтент о жизни университета, ведем соцсети.",
-                link: "https://vk.com/mediastud_rshu",
-                image: "images/media.jpg"
-            }
         ],
         sport: [
             {
@@ -144,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
                 name: "Фан-клуб «Зенит» РГГМУ",
-                description: "Объединяем болельщиков «Зенита», вместе посещаем матчи и помогаем в организации мероприятий клуба.",
+                description: "Объединяем болельщиков «Зенит», вместе посещаем матчи и помогаем в организации мероприятий.",
                 link: "https://vk.com/rshu_zenit_fans",
                 image: "images/zenit.jpg"
             },
@@ -156,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
                 name: "Туристическо-спортивный клуб «Гидромет»",
-                description: "Ходим в спортивные маршруты, участвуем в соревнованиях на дистанциях и обучаемся навыкам выживания.",
+                description: "Ходим в спортивные походы, участвуем в соревнованиях и обучаемся навыкам выживания.",
                 link: "https://vk.com/tourismrshu",
                 image: "images/tourism.jpg"
             },
@@ -194,15 +188,21 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
                 name: "Студенческий сельскохозяйственный отряд «ИРГА»",
-                description: "Работаем на виноградниках, участвуем в трудовых вахтах и создаём летние приключения с пользой.",
+                description: "Участвуем в трудовых вахтах и создаём летние приключения.",
                 link: "https://vk.com/ssho_irga",
                 image: "images/farm.jpg"
             },
             {
                 name: "Студенческий экологический отряд «Полярная Звезда»",
-                description: "Совмещаем полевые исследования с практической работой по сохранению заповедных территорий",
+                description: "Совмещаем полевые исследования с практической работой по сохранению заповедных территорий.",
                 link: "https://vk.com/seo_pz",
                 image: "images/star.jpg"
+            },
+            {
+                name: "Трудовая Бригада «Метеор»",
+                description: "Совмещаем метеонаблюдения с летними экспедициями и настоящей научной работой.",
+                link: "https://vk.com/meteorrshu",
+                image: "images/meteor.jpg"
             }
         ]
     };
