@@ -216,6 +216,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         ],
         squads: [
+
             {
                 name: "Студенческий педагогический отряд «Море»",
                 description: "Работаем в детских лагерях в качестве вожатых и организаторов.",
@@ -731,4 +732,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
-
