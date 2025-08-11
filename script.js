@@ -1,25 +1,79 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // DOM elements
-    const categoriesScreen = document.getElementById('categories-screen');
-    const swipeScreen = document.getElementById('swipe-screen');
-    const browseScreen = document.getElementById('browse-screen');
-    const resultsScreen = document.getElementById('results-screen');
-    const nextBtn = document.getElementById('next-btn');
-    const errorMessage = document.getElementById('error-message');
-    const cardDeck = document.getElementById('card-deck');
-    const likeBtn = document.getElementById('like-btn');
-    const dislikeBtn = document.getElementById('dislike-btn');
-    const matchesGrid = document.getElementById('matches-grid');
-    const browseGrid = document.getElementById('browse-grid');
-    const exportBtn = document.getElementById('export-btn');
-    const restartBtn = document.getElementById('restart-btn');
-    const backToCategoriesBtn = document.getElementById('back-to-categories-btn');
-    const modeToggle = document.getElementById('mode-toggle');
-    const showRecommendationsBtn = document.getElementById('show-recommendations-btn');
-    const recommendationsContainer = document.getElementById('recommendations-container');
-    const recommendationsGrid = document.getElementById('recommendations-grid');
 
-    // Club data organized by categories
+    // === Создание мини-логотипов в хэдере и футере ===
+    function createChessPattern(containerSelector) {
+        const container = document.querySelector(containerSelector);
+        if (!container) return;
+
+        const parent = container.parentElement;
+        const parentWidth = parent.offsetWidth;
+        const parentHeight = parent.offsetHeight;
+
+        // Размеры элементов по порядку
+        const sizes = [30, 40, 50, 40];
+        const gap = 15; // Фиксированный отступ
+        const startOffset = -50; // Начинаем выше видимой области
+
+        let y = startOffset;
+        let sizeIndex = 0;
+
+        while (y < parentHeight + 50) { // +50 чтобы заполнить и ниже
+            const currentSize = sizes[sizeIndex % sizes.length];
+            const offsetX = (sizeIndex % 2 === 0) ? 0 : currentSize/2; // Шахматный порядок
+
+            let x = -currentSize; // Начинаем левее
+
+            while (x < parentWidth + currentSize) {
+                const logo = document.createElement('img');
+                logo.src = 'images/SO.png';
+                logo.alt = '';
+                logo.style.width = currentSize + 'px';
+                logo.style.height = currentSize + 'px';
+                logo.style.left = x + 'px';
+                logo.style.top = y + 'px';
+                logo.style.position = 'absolute';
+                logo.style.opacity = '0.14';
+                logo.style.transition = 'transform 0.25s ease, opacity 0.25s ease';
+                logo.style.transform = `rotate(${Math.random() * 15 - 7.5}deg)`; // Небольшой случайный поворот
+
+                container.appendChild(logo);
+                x += currentSize + gap;
+            }
+
+            y += currentSize + gap;
+            sizeIndex++;
+        }
+    }
+
+    // Строим шахматку после полной загрузки страницы
+    window.addEventListener('load', () => {
+        createChessPattern('.header-background-logos', 35, 45, 15);
+
+    });
+
+
+    // =================== ОСНОВНОЙ КОД ПРИЛОЖЕНИЯ ===================
+    // DOM элементы
+        const categoriesScreen = document.getElementById('categories-screen');
+        const swipeScreen = document.getElementById('swipe-screen');
+        const browseScreen = document.getElementById('browse-screen');
+        const resultsScreen = document.getElementById('results-screen');
+        const nextBtn = document.getElementById('next-btn');
+        const errorMessage = document.getElementById('error-message');
+        const cardDeck = document.getElementById('card-deck');
+        const likeBtn = document.getElementById('like-btn');
+        const dislikeBtn = document.getElementById('dislike-btn');
+        const matchesGrid = document.getElementById('matches-grid');
+        const browseGrid = document.getElementById('browse-grid');
+        const exportBtn = document.getElementById('export-btn');
+        const restartBtn = document.getElementById('restart-btn');
+        const backToCategoriesBtn = document.getElementById('back-to-categories-btn');
+        const modeToggle = document.getElementById('mode-toggle');
+        const showRecommendationsBtn = document.getElementById('show-recommendations-btn');
+        const recommendationsContainer = document.getElementById('recommendations-container');
+        const recommendationsGrid = document.getElementById('recommendations-grid');
+
+        // Данные о клубах
     const clubsData = {
         science: [
             {
