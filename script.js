@@ -217,12 +217,6 @@ document.addEventListener('DOMContentLoaded', function() {
         ],
         squads: [
             {
-                name: "Студенческие отряды РГГМУ",
-                description: "Объединяем различные студенческие отряды университета.",
-                link: "https://vk.com/so_rshy",
-                image: "images/squads.jpg"
-            },
-            {
                 name: "Студенческий педагогический отряд «Море»",
                 description: "Работаем в детских лагерях в качестве вожатых и организаторов.",
                 link: "https://vk.com/spo_sea",
@@ -737,3 +731,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
